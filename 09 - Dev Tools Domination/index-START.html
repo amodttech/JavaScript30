@@ -17,29 +17,56 @@
       p.style.fontSize = '50px';
     }
 
-    // Regular
+    // Regular 
+    console.log(`hello`)
 
     // Interpolated
-
+    console.log(`hello I am a %s string`, 'shit')
     // Styled
-
+    console.log(`%c i am some great text`, 'font-size: 20px')  // this one is v cool
     // warning!
-
+    console.warn("uh oh")
     // Error :|
-
+    console.error("error error")
     // Info
-
+    console.info('fun fact')
     // Testing
-
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('ouch'), 'that is wrong')
     // clearing
-
+    console.clear()
     // Viewing DOM Elements
+    console.log(`p`, p)
+    console.dir(p)
+
 
     // Grouping together
+    console.clear()
 
+    dogs.forEach(dog => {   /// this is awesome
+      console.group(`${dog.name}`)
+      console.log(`this is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age}`)
+      console.groupEnd(`${dog.name}`)
+    })
     // counting
+    console.count('number')
+    console.count('number')
+    console.count('number')
+    console.count('number')
+    console.count('number')
+
+
 
     // timing
+    console.time('fetching data')
+    fetch('https://api.github.com/users/amodttech')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetching data')
+      console.log(`data`, data)
+    })
+    
 
   </script>
 </body>
